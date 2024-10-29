@@ -2,9 +2,6 @@
 
 FROM node:20-bullseye-slim AS installer
 
-RUN apt-get update \
-  && apt-get install -y ca-certificates \
-  && rm -rf /var/lib/apt/lists/*
 
 COPY ./package.json ./app/package.json
 COPY ./tsconfig.json ./app/tsconfig.json
